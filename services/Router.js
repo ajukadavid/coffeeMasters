@@ -2,7 +2,8 @@ const Router = {
     init: () => {
         document.querySelectorAll('a.navlink').forEach(link => {
             link.addEventListener("click", e => {
-                
+                    e.preventDefault()
+                    console.log('Link clicked')
             })
         })
     },

@@ -5,10 +5,10 @@ import Router from './services/Router.js'
 
 window.app = {}
 app.store = Store
-app.Router = Router
+app.router = Router
 
 window.addEventListener("DOMContentLoaded", () => {
     loadData()
-    
+    app.router.init()
 })
 
