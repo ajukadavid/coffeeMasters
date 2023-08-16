@@ -15,6 +15,15 @@ const Router = {
         if(addToHistory) {
             history.pushState({route}, "", route)
         }
+        let pageElement = null
+        switch(route) {
+            case "/":
+                break
+
+            case "/order":
+                break
+        }
+        document.querySelector("main").appendChild
     }
 }
 
