@@ -7,6 +7,12 @@ const Router = {
                     Router.go(url)
             })
         })
+        //Event handler for URL Change
+        window.addEventListener("popstate", e => {
+            Router.go(e.state.route, false)
+        })
+
+        //Check the initial URL
         Router.go(location.pathname)
     },
     go: (route, addToHistory=true) => {
@@ -19,11 +25,16 @@ const Router = {
                 pageElement = document.createElement('h1')
                 pageElement.textContent = "Menu"
                 break
-
             case "/order":
                 pageElement = document.createElement('h1')
                 pageElement.textContent = "Your order"
                 break
+            default: 
+                if(route.startsWith("/product-")) {
+                    pageElement = document.createElement('h1')
+                    pageElement.textContent = "details"
+                    const paramId = route.substring(route.lastIndexOf("-")+1)
+                }
         }
         if(pageElement) {
             const cache = document.querySelector("main")
