@@ -4,4 +4,4 @@ export class DetailsPage extends HTMLElement {
     }
 }
 
-customElements.define("details-page", DetailsPagePage)
+customElements.define("details-page", DetailsPage)

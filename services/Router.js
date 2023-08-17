@@ -23,16 +23,13 @@ const Router = {
         switch(route) {
             case "/":
                 pageElement = document.createElement('menu-page')
-                pageElement.textContent = "Menu"
                 break
             case "/order":
                 pageElement = document.createElement('order-page')
-                pageElement.textContent = "Your order"
                 break
             default: 
                 if(route.startsWith("/product-")) {
                     pageElement = document.createElement('details-page')
-                    pageElement.textContent = "details"
                     const paramId = route.substring(route.lastIndexOf("-")+1)
                 }
         }
